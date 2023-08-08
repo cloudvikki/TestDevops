@@ -13,13 +13,13 @@ RUN npm install --silent
 RUN npm install -g @angular/cli --silent
 
 #in case if we want to send a parameter and build on the basis of parameter we can use below command and we have to setup it in package json
-ARG envName
-ENV env_name=$envName
-RUN echo "The env_name is ${env_name}"
-RUN npm run build:${env_name}
+#ARG envName
+#ENV env_name=$envName
+#RUN echo "The env_name is ${env_name}"
+#RUN npm run build:${env_name}
 
 # without variable name
-#RUN npm run build 
+RUN npm run build 
 
 # prepare nginx
 FROM nginx:1.16.0-alpine
